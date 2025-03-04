@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cocok.demo.fapp.email.EmailDao">
+
+	  <resultMap id="resultMapObj" type="com.cocok.demo.fapp.email.EmailDto"></resultMap>
+	  
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+	  select 
+		    seq,
+   			main,
+   			email,
+   			 
+   			addressBook_seq
+	  from
+		  email
+	  where 1=1
+	  order by seq desc
+</select>
+
+
+<select id="selectOne" resultMap="resultMapObj">
+	  select 
+		    seq,
+   			main,
+   			email,
+ 
+   			addressBook_seq
+	  from
+		  email
+	  where 1=1
+	  and seq = #{seq}
+	  
+	  order by seq desc
+</select>
+</mapper>
