@@ -15,7 +15,8 @@
 <tr th:each="list : ${list}">
 	<td th:text="${list.seq}"></td>
 	<td th:text="${list.main}"></td>
-	<td th:text="${list.type}"></td>
+	 
+	<td><a th:href = "@{/phone/phoneXdmView}" th:text="${list.type}"></a></td>
 	<td th:text="${list.phoneNum}"></td>
 	<td th:text="${list.addressBook_seq}"></td>
 </tr>
