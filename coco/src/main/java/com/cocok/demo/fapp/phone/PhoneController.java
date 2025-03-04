@@ -17,8 +17,10 @@ public class PhoneController {
 	}
 	
 	@RequestMapping(value = "/phone/phoneXdmView")
-	public String phoneXdmView(Model model) {
-		 model.addAttribute("item",phoneService.selectOne());
+	public String phoneXdmView(Model model, PhoneDto phoneDto) {
+		
+		System.out.println("phoneDto.getSeq(): "+ phoneDto.getSeq());
+		 model.addAttribute("item",phoneService.selectOne(phoneDto));
 		return "/phone/phoneXdmView";
 	}
 }

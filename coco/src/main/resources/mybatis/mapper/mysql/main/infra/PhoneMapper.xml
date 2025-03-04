@@ -30,7 +30,7 @@
 	  from
 		  phone
 	  where 1=1
-	  and seq =1
+	  and seq = #{seq}
 	  
 	  order by seq desc
 </select>

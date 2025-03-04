@@ -27,8 +27,8 @@ public class PhoneService {
 		return phoneDao.selectList();
 	}
 	
-	public PhoneDto selectOne(){
+	public PhoneDto selectOne(PhoneDto phoneDto){
 		  
-		return phoneDao.selectOne();
+		return phoneDao.selectOne(phoneDto);
 	}
 }
