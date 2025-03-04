@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<table>
+
+<tr>
+	<td>seq</td>
+	<td>main</td>
+	<td>type</td>
+	<td>phoneNum</td>  
+	<td>addressBook_seq</td>
+</tr>
+<tr>
+	<td th:text="${item.seq}"></td>
+	<td th:text="${item.main}"></td>
+	<td th:text="${item.type}"></td>
+	<td th:text="${item.phoneNum}"></td>
+	<td th:text="${item.addressBook_seq}"></td>
+</tr>
+</table>
+</body>
+</html>

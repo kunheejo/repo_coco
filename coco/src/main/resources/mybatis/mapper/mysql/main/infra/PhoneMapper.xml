@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cocok.demo.fapp.phone.PhoneDao">
+
+	  <resultMap id="resultMapObj" type="com.cocok.demo.fapp.phone.PhoneDto"></resultMap>
+	  
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+	  select 
+		    seq,
+   			main,
+   			type,
+   			phoneNum,
+   			addressBook_seq
+	  from
+		  phone
+	  where 1=1
+	  order by seq desc
+</select>
+
+
+<select id="selectOne" resultMap="resultMapObj">
+	  select 
+		    seq,
+   			main,
+   			type,
+   			phoneNum,
+   			addressBook_seq
+	  from
+		  phone
+	  where 1=1
+	  and seq =1
+	  
+	  order by seq desc
+</select>
+</mapper>
