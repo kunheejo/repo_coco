@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cocok.demo.fapp.email.EmailDao;
-import com.cocok.demo.fapp.email.EmailDto;
+import com.cocok.demo.fapp.anniversary.AnniversaryDao;
+import com.cocok.demo.fapp.anniversary.AnniversaryDto;
 
 @Service
 public class AnniversaryService {

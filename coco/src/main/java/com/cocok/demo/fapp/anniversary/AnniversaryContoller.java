@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cocok.demo.fapp.email.EmailDto;
+import com.cocok.demo.fapp.anniversary.AnniversaryDto;
 
 
 @Controller
@@ -52,6 +52,4 @@ public class AnniversaryContoller {
 		System.out.println("anniversaryDto.getSeq(): " + anniversaryDto.getSeq());
 		return "redirect:/anniversary/anniversaryXdmList";
 	}
-	
-
 }

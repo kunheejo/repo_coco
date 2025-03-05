@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<table>
+	 
+<tr>
+	<td>seq</td>
+	<td>faverit</td>
+	<td>firstName</td>
+	<td>lastName</td>	 
+	<td>honorificName</td>
+	<td>middleName</td>
+	<td>fakeName</td>
+	<td>naverID</td>
+	<td>nickname</td>
+	<td>memo</td>
+</tr>
+<tr th:each="list : ${list}">
+	<td th:text="${list.seq}"></td>
+	<td th:text="${list.faverit}"></td>
+	<td th:text="${list.firstName}"></td>
+	<td th:text="${list.lastName}"></td>
+	<td th:text="${list.honorificName}"></td>
+	<td th:text="${list.middleName}"></td>
+	<td th:text="${list.fakeName}"></td>
+	 
+	<td><a th:href = "@{/addressbook/addressbookXdmView(seq=${list.seq})}" th:text="${list.naverID}"></a></td>
+	 
+	<td th:text="${list.nickname}"></td>
+	<td th:text="${list.memo}"></td>
+</tr>
+</table>
+
+<br>
+<a href="/addressbook/addressbookXdmForm">등록</a>
+</body>
+</html>

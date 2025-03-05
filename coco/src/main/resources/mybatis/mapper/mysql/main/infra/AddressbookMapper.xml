@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cocok.demo.fapp.addressbook.AddressbookDao">
+
+	  <resultMap id="resultMapObj" type="com.cocok.demo.fapp.addressbook.AddressbookDto"></resultMap>
+	  
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+			  select 
+				    seq,
+					faverit,
+					firstName,
+					lastName,
+					honorificName,
+					middleName,
+					fakeName,
+					naverID,
+					nickname
+					memo
+			  from
+				  addressbook
+			  where 1=1
+			  order by seq desc
+	</select>
+
+
+	<select id="selectOne" resultMap="resultMapObj">
+		  select 
+			    seq,
+				faverit,
+				firstName,
+				lastName,
+				honorificName,
+				middleName,
+				fakeName,
+				naverID,
+				nickname,
+				memo
+		  from
+			  addressbook
+		  where 1=1
+		  and seq = #{seq}
+		  
+		  order by seq desc
+	</select>
+
+	<insert id="insert"> 
+		insert into addressbook (
+				faverit,
+				firstName,
+				lastName,
+				honorificName,
+				middleName,
+				fakeName,
+				naverID,
+				nickname,
+				memo
+		 ) values (
+			 
+			#{faverit},
+			#{firstName},
+			#{lastName},
+			#{honorificName},
+			#{middleName},
+			#{fakeName},
+			#{naverID},
+			#{nickname},
+			#{memo}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		</selectKey>
+	</insert>
+</mapper>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	 
+	
+<form action="/addressbook/addressbookXdmInst" method="post" id="form">
+	seq: <input type="text" name="seq" id="seq" maxlength="10" disabled/>
+	faverit: <input type="text" name="faverit" id="faverit"/>
+	firstName: <input type="text" name="firstName" id="firstName"/>
+	lastName: <input type="text" name="lastName" id="lastName" />
+	honorificName: <input type="text" name="honorificName" id="honorificName"/>
+	middleName: <input type="text" name="middleName" id="middleName"/>
+	fakeName: <input type="text" name="fakeName" id="fakeName"/>
+	naverID: <input type="text" name="naverID" id="naverID" maxlength="30" placeholder="아이디 입력 "/>
+	nickname: <input type="text" name="nickname" id="nickname"/>
+	memo: <input type="text" name="memo" id="memo"/>
+	<button type="button" id="btsSave">저장</button>
+</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btsSave").onclick = function(){
+			document.getElementById("form").submit();
+		}
+		
+//		document.getElementById("email").onclick = function(){
+//			alert("email")
+//		}
+		
+	</script>
+
+
+ 
+ 
+</body>
+</html>

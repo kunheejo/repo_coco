@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<table>
+	 
+<tr>
+	<td>seq</td>
+	<td>faverit</td>
+	<td>firstName</td>
+	<td>lastName</td>
+	<td>honorificName</td>
+	<td>middleName</td>
+	<td>fakeName</td>
+	<td>naverID</td>
+	<td>nickname</td>
+	<td>memo</td>
+</tr>
+
+
+<tr>
+	<td th:text="${item.seq}"></td>
+	<td th:text="${item.faverit}"></td>
+	<td th:text="${item.firstName}"></td>
+	<td th:text="${item.lastName}"></td>
+	<td th:text="${item.honorificName}"></td>
+	<td th:text="${item.middleName}"></td>
+	<td th:text="${item.fakeName}"></td>
+	<td th:text="${item.naverID}"></td>
+	<td th:text="${item.nickname}"></td>
+	<td th:text="${item.memo}"></td>
+</tr>
+</table>
+</body>
+</html>
