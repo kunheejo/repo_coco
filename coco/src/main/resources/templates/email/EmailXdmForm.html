@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	
+	
+<form action="/email/emailXdmInst" method="post" id="form">
+	seq: <input type="text" name="seq" id="seq" maxlength="10" disabled/>
+	main: <input type="text" name="main" id="main"/>
+	email: <input type="text" name="email" id="email" maxlength="30" placeholder="이메일을 입력"/>
+	addressBook_seq: <input type="text" name="addressBook_seq" id="addressBook_seq"/>
+	<button type="button" id="btsSave">저장</button>
+</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btsSave").onclick = function(){
+			document.getElementById("form").submit();
+		}
+		
+//		document.getElementById("email").onclick = function(){
+//			alert("email")
+//		}
+		
+	</script>
+
+
+ 
+ 
+</body>
+</html>

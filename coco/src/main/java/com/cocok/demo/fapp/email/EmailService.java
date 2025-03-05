@@ -22,12 +22,15 @@ public class EmailService {
 //	}
 //	
 	public List<EmailDto> selectList(){
-		  
 		return emailDao.selectList();
 	}
 	
 	public EmailDto selectOne(EmailDto emailDto){
-		  
 		return emailDao.selectOne(emailDto);
 	}
+	
+	public int insert(EmailDto emailDto){
+		return emailDao.insert(emailDto);
+	}
+	
 }
