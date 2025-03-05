@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cocok.demo.fapp.anniversary.AnniversaryDao">
+
+	  <resultMap id="resultMapObj" type="com.cocok.demo.fapp.anniversary.AnniversaryDto"></resultMap>
+	  
+	  
+	  <select id="selectList" resultMap="resultMapObj">
+			  select 
+				    seq,
+		   			main,
+		   			type,
+		   			date,
+		   			solarCalendarNy,
+		   			addressBook_seq
+			  from
+				  anniversary
+			  where 1=1
+			  order by seq desc
+	</select>
+
+
+	<select id="selectOne" resultMap="resultMapObj">
+		  select 
+			    seq,
+	   			main,
+	   			type,
+	   			date,
+				solarCalendarNy,
+	   			addressBook_seq
+		  from
+			  anniversary
+		  where 1=1
+		  and seq = #{seq}
+		  
+		  order by seq desc
+	</select>
+
+	<insert id="insert"> 
+		insert into anniversary (
+			 
+			main,
+			type,
+			date,
+			solarCalendarNy,
+			addressBook_seq
+		 ) values (
+			 
+			#{main},
+			#{type},
+			#{date},
+			#{solarCalendarNy},
+			#{addressBook_seq}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		</selectKey>
+	</insert>
+</mapper>

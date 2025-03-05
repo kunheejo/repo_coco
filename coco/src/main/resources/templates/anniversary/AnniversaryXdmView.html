@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<table>
+
+<tr>
+	<td>seq</td>
+	<td>main</td>
+	<td>type</td>
+	<td>date</td>
+	<td>solarCalendarNy</td>
+	<td>addressBook_seq</td>
+</tr>
+<tr>
+	<td th:text="${item.seq}"></td>
+	<td th:text="${item.main}"></td>
+	<td th:text="${item.type}"></td>
+	<td th:text="${item.date}"></td>
+	<td th:text="${item.solarCalendarNy}"></td>
+	<td th:text="${item.addressBook_seq}"></td>
+</tr>
+</table>
+</body>
+</html>

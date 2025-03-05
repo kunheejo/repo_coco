@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<table>
+	 
+<tr>
+	<td>seq</td>
+	<td>main</td>
+	<td>type</td>	 
+	<td>date</td>
+	<td>solarCalendarNy</td>
+	<td>addressBook_seq</td>
+</tr>
+<tr th:each="list : ${list}">
+	<td th:text="${list.seq}"></td>
+	<td th:text="${list.main}"></td>
+	<td th:text="${list.type}"></td>
+	 
+	<td><a th:href = "@{/anniversary/anniversaryXdmView(seq=${list.seq})}" th:text="${list.date}"></a></td>
+	 
+	<td th:text="${list.addressBook_seq}"></td>
+</tr>
+</table>
+
+<br>
+<a href="/anniversary/anniversaryXdmForm">등록</a>
+</body>
+</html>

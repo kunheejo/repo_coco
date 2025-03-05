@@ -18,6 +18,8 @@ public class EmailController {
 		return "/email/emailXdmList";
 	}
 	
+	
+	
 	@RequestMapping(value = "/email/emailXdmView")
 	public String emailXdmView(Model model, EmailDto emailDto) {
 		
@@ -38,9 +40,7 @@ public class EmailController {
 	public String emailXdmInst(EmailDto emailDto) {
 	
 		System.out.println("emailDto.getSeq(): " + emailDto.getSeq());
-		System.out.println("emailDto.getMain(): " + emailDto.getMain());
-		System.out.println("emailDto.getEmail(): " + emailDto.getEmail());
-		System.out.println("emailDto.getAddressBook_seq(): " + emailDto.getAddressBook_seq());
+		 
 		
 		emailService.insert(emailDto);
 		
