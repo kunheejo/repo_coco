@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cocok.demo.fapp.homepage.HomepageDao">
+
+	  <resultMap id="resultMapObj" type="com.cocok.demo.fapp.homepage.HomepageDto"></resultMap>
+	  
+  
+	  <select id="selectList" resultMap="resultMapObj">
+			  select 
+				    seq,
+					main,
+					homepageAddress,
+					addressBook_seq
+					 
+			  from
+				  homepage
+			  where 1=1
+			  order by seq desc
+	</select>
+
+
+	<select id="selectOne" resultMap="resultMapObj">
+		  select 
+			    seq,
+				main,
+				homepageAddress,
+			    addressBook_seq
+				 
+		  from
+			  homepage
+		  where 1=1
+		  and seq = #{seq}
+		  
+		  order by seq desc
+	</select>
+
+	<insert id="insert"> 
+		insert into homepage (				 
+				main,
+				homepageAddress,
+			    addressBook_seq		 
+		 ) values (			 
+			#{main},
+			#{homepageAddress},
+			#{addressBook_seq}
+			 
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+	update homepage set
+	  main = #{main},
+	  homepageAddress = #{homepageAddress},
+	  addressBook_seq = #{addressBook_seq}
+	  
+	   
+	where seq = #{seq}
+	</update>
+	
+	
+</mapper>

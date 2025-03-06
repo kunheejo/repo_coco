@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cocok.demo.fapp.address.AddressDao">
+
+	  <resultMap id="resultMapObj" type="com.cocok.demo.fapp.address.AddressDto"></resultMap>
+	  
+  
+	  <select id="selectList" resultMap="resultMapObj">
+			  select 
+				    seq,
+					main,
+					type,
+					postNum,
+					betterAddress,
+					addressBook_seq
+					 
+			  from
+				  address
+			  where 1=1
+			  order by seq desc
+	</select>
+
+
+	<select id="selectOne" resultMap="resultMapObj">
+		  select 
+			    seq,
+				main,
+				type,
+				postNum,
+				betterAddress,
+				addressBook_seq
+				 
+		  from
+			  address
+		  where 1=1
+		  and seq = #{seq}
+		  
+		  order by seq desc
+	</select>
+
+	<insert id="insert"> 
+		insert into address (				 
+				main,
+				type,
+				postNum,
+				betterAddress,
+				addressBook_seq			 
+		 ) values (			 
+			#{main},
+			#{type},
+			#{postNum},
+			#{betterAddress},
+			#{addressBook_seq}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+	update address set
+	  main = #{main},
+	  type = #{type},
+	  postNum = #{postNum},
+	  betterAddress = #{betterAddress},
+	  addressBook_seq = #{addressBook_seq}
+	  
+	   
+	where seq = #{seq}
+	</update>
+	
+	
+</mapper>

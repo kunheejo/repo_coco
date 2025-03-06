@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<table>
+	 
+ 
+<tr>
+	<td>seq</td>
+	<td>main</td>
+	<td>homepageAddress</td>
+	<td>addressBook_seq</td>
+	 
+</tr>
+<tr th:each="list : ${list}">
+	<td th:text="${list.seq}"></td>
+	<td th:text="${list.main}"></td>
+	<td><a th:href = "@{/homepage/homepageXdmView(seq=${list.seq})}" th:text="${list.homepageAddress}"></a></td>
+	<td th:text="${list.addressBook_seq}"></td>
+</tr>
+</table>
+
+<br>
+<a href="/homepage/homepageXdmForm">등록</a>
+</body>
+</html>

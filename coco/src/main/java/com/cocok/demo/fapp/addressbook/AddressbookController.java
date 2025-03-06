@@ -49,4 +49,20 @@ public class AddressbookController {
 		System.out.println("addressbookDto.getSeq(): " + addressbookDto.getSeq());
 		return "redirect:/addressbook/addressbookXdmList";
 	}
+	
+	
+	@RequestMapping(value = "/addressbook/addressbookXdmMfom")
+	public String addressbookXdmMfom(Model model,AddressbookDto addressbookDto) {
+		
+		 model.addAttribute("item",addressbookService.selectOne(addressbookDto));
+//		 System.out.println("addressbookDto.getSeq():" + addressbookDto.getSeq());
+		return "/addressbook/addressbookXdmMfom";
+	}
+	
+	
+	@RequestMapping(value = "/addressbook/addressbookXdmUpdt")
+	public String addressbookXdmvUpdt(AddressbookDto addressbookDto) {
+		addressbookService.update(addressbookDto);
+		return "redirect:/addressbook/addressbookXdmList";
+	}
 }

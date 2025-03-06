@@ -11,4 +11,5 @@ public interface AddressbookDao {
 	public List<AddressbookDto> selectList();
 	public AddressbookDto selectOne(AddressbookDto addressbookDto);
 	public int insert(AddressbookDto addressbookDto);
+	public int update(AddressbookDto addressbookDto);
 }

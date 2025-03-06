@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<form action="/addressbook/addressbookXdmUpdt" method="post" id="form">
+		<input type="hidden" name="seq" th:value="${item?.seq}">
+		seq: <input type="text" name="seq" id="seq" maxlength="10" disabled th:value="${item?.seq}"/>
+		faverit: <input type="text" name="faverit" id="faverit" th:value="${item?.faverit}"/>
+		firstName: <input type="text" name="firstName" id="firstName" th:value="${item?.firstName}"/>
+		lastName: <input type="text" name="lastName" id="lastName" th:value="${item?.lastName}"/>
+		honorificName: <input type="text" name="honorificName" id="honorificName" th:value="${item?.honorificName}"/>
+		middleName: <input type="text" name="middleName" id="middleName" th:value="${item?.middleName}"/>
+		fakeName: <input type="text" name="fakeName" id="fakeName" th:value="${item?.fakeName}"/>
+		naverID: <input type="text" name="naverID" id="naverID" maxlength="30" placeholder="아이디 입력"  />
+		nickname: <input type="text" name="nickname" id="nickname" th:value="${item?.nickname}"/>
+		memo: <input type="text" name="memo" id="memo" th:value="${item?.memo}"/>
+		<button type="button" id="btsSave">저장</button>
+	</form>
+ 
+	
+	<br>
+	 
+	
+	
+	<script type="text/javascript">
+			document.getElementById("btsSave").onclick = function(){
+				document.getElementById("form").submit();
+			}
+			
+		
+			
+	//		document.getElementById("email").onclick = function(){
+	//			alert("email")
+	//		}
+			
+		</script>
+ 
+ 
+</body>
+</html>

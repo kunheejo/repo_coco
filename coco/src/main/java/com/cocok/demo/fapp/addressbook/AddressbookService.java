@@ -32,4 +32,7 @@ public class AddressbookService {
 	public int insert(AddressbookDto addressbookDto){
 		return addressbookDao.insert(addressbookDto);
 	}
+	public int update(AddressbookDto addressbookDto){
+		return addressbookDao.update(addressbookDto);
+	}
 }

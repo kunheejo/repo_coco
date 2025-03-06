@@ -72,4 +72,21 @@
 				SELECT last_insert_id()
 		</selectKey>
 	</insert>
+	
+	<update id="update">
+	update addressbook set
+	  faverit = #{faverit},
+	  firstName = #{firstName},
+	  lastName = #{lastName},
+	  honorificName = #{honorificName},
+	  middleName = #{middleName},
+	  fakeName = #{fakeName},
+	  naverID = #{naverID},
+	  nickname = #{nickname},
+	  memo = #{memo}
+	   
+	where seq = #{seq}
+	</update>
+	
+	
 </mapper>
