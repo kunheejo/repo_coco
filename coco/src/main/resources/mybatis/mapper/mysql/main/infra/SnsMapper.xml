@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cocok.demo.fapp.sns.SnsDao">
+
+	  <resultMap id="resultMapObj" type="com.cocok.demo.fapp.sns.SnsDto"></resultMap>
+	  
+  
+	  <select id="selectList" resultMap="resultMapObj">
+			  select 
+				    seq,
+					main,
+					type,
+					snsAddress,
+					addressBook_seq
+					 
+			  from
+				  sns
+			  where 1=1
+			  order by seq desc
+	</select>
+
+
+	<select id="selectOne" resultMap="resultMapObj">
+		  select 
+			    seq,
+				main,
+				type,
+				snsAddress,
+			    addressBook_seq
+				 
+		  from
+			  sns
+		  where 1=1
+		  and seq = #{seq}
+		  
+		  order by seq desc
+	</select>
+
+	<insert id="insert"> 
+		insert into sns (				 
+				main,
+				type,
+				snsAddress,
+			    addressBook_seq		 
+		 ) values (			 
+			#{main},
+			#{type},
+			#{snsAddress},
+			#{addressBook_seq}
+			 
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+	update sns set
+	  main = #{main},
+	  type = #{type},
+	  snsAddress = #{snsAddress},
+	  addressBook_seq = #{addressBook_seq}
+	  
+	   
+	where seq = #{seq}
+	</update>
+	
+	
+</mapper>

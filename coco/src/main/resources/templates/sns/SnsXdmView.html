@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<table>
+	 
+<tr>
+	<td>seq</td>
+	<td>main</td>
+	<td>type</td>
+	<td>snsAddress</td>
+	<td>addressBook_seq</td>
+	 
+</tr>
+
+
+<tr>
+	<td th:text="${item.seq}"></td>
+	<td th:text="${item.main}"></td>
+	<td th:text="${item.type}"></td>
+	<td th:text="${item.snsAddress}"></td>
+	<td th:text="${item.addressBook_seq}"></td>
+	 
+</tr>
+</table>
+
+<a href="/sns/snsXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/sns/snsXdmMfom(seq=${item.seq})}">수정</a>
+</body>
+</html>
