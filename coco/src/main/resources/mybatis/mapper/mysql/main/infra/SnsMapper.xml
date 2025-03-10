@@ -12,11 +12,13 @@
 					main,
 					type,
 					snsAddress,
-					addressBook_seq
+					addressBook_seq,
+					delNy
 					 
 			  from
 				  sns
 			  where 1=1
+			  and delNy = 0
 			  order by seq desc
 	</select>
 
@@ -33,7 +35,6 @@
 			  sns
 		  where 1=1
 		  and seq = #{seq}
-		  
 		  order by seq desc
 	</select>
 
@@ -42,13 +43,14 @@
 				main,
 				type,
 				snsAddress,
-			    addressBook_seq		 
+			    addressBook_seq,		
+			    delNy
 		 ) values (			 
 			#{main},
 			#{type},
 			#{snsAddress},
-			#{addressBook_seq}
-			 
+			#{addressBook_seq},
+			0 
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 				SELECT last_insert_id()
@@ -65,6 +67,22 @@
 	   
 	where seq = #{seq}
 	</update>
+	
+	
+	
+	
+	
+	<delete id="delete">
+		delete from sns where seq=#{seq}
+	</delete>
+	
+	 <update id="uelete">
+		update sns set
+		delNy=1
+		where seq=#{seq}
+	</update>
+	
+	 
 	
 	
 </mapper>

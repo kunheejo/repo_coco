@@ -10,4 +10,5 @@ public interface SnsDao {
 	public SnsDto selectOne(SnsDto snsDto);
 	public int insert(SnsDto snsDto);
 	public int update(SnsDto snsDto);
+	public int delete(SnsDto snsDto);
 }

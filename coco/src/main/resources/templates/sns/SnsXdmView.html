@@ -26,7 +26,21 @@
 </table>
 
 <a href="/sns/snsXdmList">목록</a>
-<a href="">삭제</a>
+<a href="@{/sns/snsXdmDele(seq=${item.seq})}" id="delete">삭제</a>
 <a th:href="@{/sns/snsXdmMfom(seq=${item.seq})}">수정</a>
+<a th:href="@{/sns/snsXdmUele(seq=${item.seq})}" id="uelete">업제</a>
+
+<script type="text/javascript"> 
+	
+	document.getElementById("uelete").onclick = function(){
+		if(confirm("진짜요??")){
+			 
+		}else{
+			return false;
+		}
+	}
+</script>
+
+
 </body>
 </html>

@@ -20,4 +20,7 @@ public class SnsService {
 	public int update(SnsDto snsDto) {
 		return snsdao.update(snsDto);
 	}
+	public int delete(SnsDto snsDto) {
+		return snsdao.delete(snsDto);
+	}
 }

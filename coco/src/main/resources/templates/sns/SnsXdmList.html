@@ -12,6 +12,7 @@
 	<td>type</td>
 	<td>snsAddress</td>
 	<td>addressBook_seq</td>
+	<td>delNy</td>
 	 
 </tr>
 <tr th:each="list : ${list}">
@@ -20,6 +21,7 @@
 	<td th:text="${list.type}"></td>
 	<td><a th:href = "@{/sns/snsXdmView(seq=${list.seq})}" th:text="${list.snsAddress}"></a></td>
 	<td th:text="${list.addressBook_seq}"></td>
+	<td th:text="${list.delNy}"></td>
 </tr>
 </table>
 

@@ -4,10 +4,12 @@ public class SnsDto {
 	 
 	 
 	private String seq;
-	private int main;
+	private Integer main;
 	private String type;
 	private String snsAddress;
-	private int addressBook_seq;
+	private Integer addressBook_seq;
+	private Integer delNy;
+	
 //	=======
 	public String getSeq() {
 		return seq;
@@ -15,10 +17,10 @@ public class SnsDto {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-	public int getMain() {
+	public Integer getMain() {
 		return main;
 	}
-	public void setMain(int main) {
+	public void setMain(Integer main) {
 		this.main = main;
 	}
 	public String getType() {
@@ -33,13 +35,20 @@ public class SnsDto {
 	public void setSnsAddress(String snsAddress) {
 		this.snsAddress = snsAddress;
 	}
-	public int getAddressBook_seq() {
+	public Integer getAddressBook_seq() {
 		return addressBook_seq;
 	}
-	public void setAddressBook_seq(int addressBook_seq) {
+	public void setAddressBook_seq(Integer addressBook_seq) {
 		this.addressBook_seq = addressBook_seq;
 	}
-	
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
+ 
+	 
  
 	
 	

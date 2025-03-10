@@ -54,10 +54,21 @@ public class SnsController {
 	}
 	
 	@RequestMapping(value = "/sns/snsXdmUpdt")
-	public String snsXdmvUpdt(SnsDto snsDto) {
+	public String snsXdmUpdt(SnsDto snsDto) {
 		snsService.update(snsDto);
 		return "redirect:/sns/snsXdmList";
 	}
 	
+	@RequestMapping(value = "/sns/snsXdmDele")
+	public String snsXdmDele(SnsDto snsDto) {
+		snsService.delete(snsDto);
+		return "redirect:/sns/snsXdmList";
+	}
+	
+	@RequestMapping(value = "/sns/snsXdmUele")
+	public String snsXdmUele(SnsDto snsDto) {
+		snsService.delete(snsDto);
+		return "redirect:/sns/snsXdmList";
+	}
 	
 }
